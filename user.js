@@ -1,3 +1,4 @@
+// Source: https://gist.github.com/0XDE57/fbd302cef7693e62c769
 // CONTROL & MISC
 user_pref('dom.event.contextmenu.enabled', false);
   // Don't allow websites to prevent use of right-click, 
