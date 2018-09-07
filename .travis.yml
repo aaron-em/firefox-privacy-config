@@ -1,11 +1,13 @@
 language: node_js
 node_js:
   - "8"
-
 sudo: required
 services:
   - docker
 before_install:
   - docker build -t fgen .
 script:
-  - docker run fgen:latest
+  - docker run -e SSH_DEPLOY_KEY=$SSH_DEPLOY_KEY fgen:latest
+notifications:
+  email:
+    on_failure: always

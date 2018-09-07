@@ -1,7 +1,12 @@
-* Firefox privacy config generator
+#+TITLE: Firefox privacy config
+#+OPTIONS: toc:nil
 
-I found [[https://gist.github.com/0XDE57/fbd302cef7693e62c769][this gist]] that has some very useful Firefox configuration settings around privacy and performance. I thought it'd be neat to automatically transform that into a Javascript snippet that can be dropped into a Firefox profile's `user.js` file. So I built that, in the worst possible way.
+So I found [[https://gist.github.com/0XDE57/fbd302cef7693e62c769][this gist]] that has some very useful Firefox configuration settings around privacy and performance. I thought it'd be neat to automatically transform that into a Javascript snippet that can be dropped into a Firefox profile's `user.js` file. So I built this garbage robot to do that.
 
-It runs in Travis CI when the gist gets updated *FIXME make it run when the gist gets updated* right now it's just daily lol and generates [[tree/master/user.js][this user.js file]]. Copy it into your Firefox profile (appending to your existing user.js, if you have one) to use it. If you don't know where to find your Firefox profile, [[https://support.mozilla.org/en-US/kb/profiles-where-firefox-stores-user-data][look here]].
+It runs in Travis CI every day, and when it sees that the gist has been updated, it generates [[./user.js][this user.js file]]. Copy it into your Firefox profile (appending to your existing user.js, if you have one) to use it. If you don't know where to find your Firefox profile, [[https://support.mozilla.org/en-US/kb/profiles-where-firefox-stores-user-data][look here]].
 
-The gist is super cool, but it isn't mine, and I'm not proud of anything I've done here. I hereby license the contents of this repository under the terms of WTFPL, in that document's latest version. Share and Enjoy.
+Some of the options listed in that gist don't have suggested values. But they have to have _some_ value in the user prefs script. So, when a setting doesn't come with a suggested value, the robot gives it either `""` or `0`, depending on how it feels at the moment. If you use such values in your Firefox profile, you will almost certainly ruin its performance to the point of unusability. So don't do that.
+
+If the gist is updated to contain something bogus, then this robot will behave in a bogus fashion too, because it is a garbage robot. I could do something about that, but then I might as well be crafting this robot in a well-appointed shop full of gleaming brushed steel surfaces and a comprehensive array of the latest tools and materials, instead of knocking it together in my spare time from things I found in a dumpster. So you probably want to eyeball what comes out before you use it, and if it breaks Firefox when you use it, don't come crying to me.
+
+The gist is pretty cool, but it isn't mine, and I'm not proud of anything I've done here. I hereby license the contents of this repository under the terms of the WTFPL, in that document's latest version. Share and Enjoy.
